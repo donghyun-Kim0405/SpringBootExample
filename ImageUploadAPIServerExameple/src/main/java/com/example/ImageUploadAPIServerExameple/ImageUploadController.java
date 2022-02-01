@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartRequest;
 
 import java.io.File;
 
@@ -44,6 +45,21 @@ public class ImageUploadController {
             e.printStackTrace();
         }
         return ResponseEntity.ok(responseMessage);
+    }// image upload
+
+
+    @PostMapping("/uploadString")
+    public ResponseEntity<String> textController(@RequestParam("testData") String testData) {
+        String responseMessage = "ok";
+
+        System.out.println(testData);
+
+
+
+        return ResponseEntity.ok(responseMessage);
     }
+
+
+
 
 }
